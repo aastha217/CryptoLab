@@ -1,0 +1,3 @@
+Cryptography is the science of securing information.
+It protects data from unauthorized access.
+Encryption converts readable text into secret text.

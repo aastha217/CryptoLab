@@ -1,0 +1,3 @@
+The Caesar cipher is one of the oldest encryption methods.
+It shifts each letter by a fixed number of positions.
+It is simple but not secure against modern attacks.

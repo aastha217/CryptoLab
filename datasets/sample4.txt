@@ -1,0 +1,2 @@
+This project will include encryption, decryption, and cryptanalysis modules.
+Week one focuses on building the project structure.
