@@ -1,0 +1,17 @@
+                   
+                   
+┌─────────────────┐
+│ 2 Code Findings │
+└─────────────────┘
+                                                         
+  [36m[22m[24m  secure_application/src/iot_manager.py [0m
+       [1m[24msecure_application.sast.path-traversal-user-file-path[0m      
+          Possible path traversal: user-controlled path is passed to open().
+                                                                            
+           41┆ file = [1m[24mopen(path, "r")[0m
+            ⋮┆----------------------------------------
+       [1m[24msecure_application.sast.command-injection-os-system[0m      
+          Possible command injection: user input is passed to os.system().
+                                                                          
+           69┆ [1m[24mos.system(command)[0m
+

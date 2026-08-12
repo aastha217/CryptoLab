@@ -1,0 +1,15 @@
+rules:
+
+  - id: command-injection-os-system
+    message: "Possible command injection: user input is passed to os.system()."
+    severity: ERROR
+    languages:
+      - python
+    pattern: os.system(...)
+
+  - id: path-traversal-user-file-path
+    message: "Possible path traversal: user-controlled path is passed to open()."
+    severity: ERROR
+    languages:
+      - python
+    pattern: open(...)
