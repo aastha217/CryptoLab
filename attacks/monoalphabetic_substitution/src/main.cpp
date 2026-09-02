@@ -18,7 +18,7 @@ string encrypt_text(string text, string key);
 
 int main() {
 
-    ifstream file("../testcases/plaintext.txt");
+    ifstream file("attacks/monoalphabetic_substitution/testcases/plaintext.txt");
 
     if (!file) {
         cout << "Could not open plaintext.txt" << endl;
@@ -40,7 +40,7 @@ int main() {
 
     string ciphertext = encrypt_text(plaintext, key);
 
-    ofstream output("../outputs/ciphertext.txt");
+    ofstream output("attacks/monoalphabetic_substitution/outputs/ciphertext.txt");
 
     if (!output) {
         cout << "Could not create ciphertext.txt" << endl;
@@ -58,40 +58,11 @@ int main() {
 
     pattern_analysis(ciphertext);
 
-    string partial_plaintext =
-        apply_substitution(ciphertext, key);
+    string partial_plaintext = apply_substitution(ciphertext, key);
 
     display_partial_plaintext(partial_plaintext);
 
     verify_solution(plaintext, ciphertext, key);
 
     return 0;
-}
-
-string encrypt_text(string text, string key) {
-
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    string result = "";
-
-    for (char ch : text) {
-
-        if (isalpha(ch)) {
-
-            char upper = toupper(ch);
-
-            int index = alphabet.find(upper);
-
-            char newChar = key[index];
-
-            if (islower(ch))
-                newChar = tolower(newChar);
-
-            result += newChar;
-        }
-        else {
-            result += ch;
-        }
-    }
-
-    return result;
 }
