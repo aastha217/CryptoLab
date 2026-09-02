@@ -1,0 +1,19 @@
+2.13 In this problem we consider definitions of perfect secrecy for the encryption of two messages (using the same key). Here we consider distributions over pairs of messages from the message space M; we let M1, M2 be random variables denoting the first and second message, respectively. (We stress that these random variables are not assumed to be independent.) We generate a (single) key k, sample a pair of messages (m1, m2) according to the given distribution, and then compute ciphertexts c1 ← Enc_k(m1) and c2 ← Enc_k(m2); this induces a distribution over pairs of ciphertexts and we let C1, C2 be the corresponding random variables.
+
+(a) Say encryption scheme (Gen, Enc, Dec) is perfectly secret for two messages if for all distributions over M × M, all m1, m2 ∈ M, and all ciphertexts c1, c2 ∈ C with Pr[C1 = c1 ∧ C2 = c2] > 0:
+
+Pr[M1 = m1 ∧ M2 = m2 | C1 = c1 ∧ C2 = c2]
+= Pr[M1 = m1 ∧ M2 = m2].
+
+Prove that no encryption scheme can satisfy this definition.
+
+Hint: Take c1 = c2.
+
+(b) Say encryption scheme (Gen, Enc, Dec) is perfectly secret for two distinct messages if for all distributions over M × M where the first and second messages are guaranteed to be different (i.e., distributions of pairs of distinct messages), all m1, m2 ∈ M, and all c1, c2 ∈ C with Pr[C1 = c1 ∧ C2 = c2] > 0:
+
+Pr[M1 = m1 ∧ M2 = m2 | C1 = c1 ∧ C2 = c2]
+= Pr[M1 = m1 ∧ M2 = m2].
+
+Show an encryption scheme that provably satisfies this definition.
+
+Hint: The encryption scheme you propose need not be efficient, although an efficient solution is possible.
