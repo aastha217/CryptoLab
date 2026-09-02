@@ -40,6 +40,9 @@ int main() {
 
     string ciphertext = encrypt_text(plaintext, key);
 
+    cout << "\nEncrypted Text:\n";
+    cout << ciphertext << endl;
+
     ofstream output("attacks/monoalphabetic_substitution/outputs/ciphertext.txt");
 
     if (!output) {
@@ -50,7 +53,7 @@ int main() {
     output << ciphertext;
     output.close();
 
-    cout << "Ciphertext created successfully.\n";
+    cout << "Ciphertext saved successfully.\n";
 
     frequency_analysis(ciphertext);
 
